@@ -16,7 +16,7 @@ public class WeatherReporter2 {
 
     public String getWeatherInfo() {
         return MessageFormat.format("I am in {0} and it is {1}. {2}. The temperature in Fahrenheit is {3}.",
-                location, getWeatherSymbol(location), getTemperatureMessage(temperatureInCelsius), temperatureInFahrenheit);
+                location, getWeatherSymbol(location), getTemperatureMessage(), temperatureInFahrenheit);
     }
 
     private double celsiusToFahr(double temperatureInCelsius) {
@@ -38,11 +38,12 @@ public class WeatherReporter2 {
         return "🔆";
     }
 
-    public String getTemperatureMessage(double temperatureInCelsius) {
-        if (temperatureInCelsius > 30) {
+    public String getTemperatureMessage() {
+
+        if (this.temperatureInCelsius > 30) {
             return "It's too hot 🥵!";
 
-        } else if (temperatureInCelsius < 10) {
+        } else if (this.temperatureInCelsius < 10) {
             return "It's too cold 🥶!";
         }
         return "Ahhh...it's just right 😊!";

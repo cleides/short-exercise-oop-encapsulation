@@ -22,10 +22,12 @@ public class SecureBankAccount {
     }
 
     public void debitAmount (int amount) {
+
         accountBalance -= amount;
     }
 
     private void addReward() {
+
         accountBalance += REWARDAMOUNT;
     }
 }
